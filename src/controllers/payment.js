@@ -7,7 +7,7 @@ export const createOrder = async (req, res) => {
   });
 
   try {
-    const total = await req.totalOrder;
+    const total =  parseFloat(req.totalOrder);
     console.log({ total })
 
     const result = await mercadopage.preferences.create({
