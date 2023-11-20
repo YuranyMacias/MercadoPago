@@ -7,10 +7,13 @@ export const createOrder = async (req, res) => {
   });
 
   try {
+    const total = await req.totalOrder;
+    console.log({ total })
+
     const result = await mercadopage.preferences.create({
       items: [
         {
-          title: "Pago pedido productos en ModaSport",
+          title: "Pago ModaSport",
           unit_price: 5000,
           currency_id: "COP",
           quantity: 1,
